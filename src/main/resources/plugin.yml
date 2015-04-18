@@ -1,0 +1,4 @@
+name: MineTweet_for_BungeeCord
+main: com.ittekikun.bplugin.MineTweet.MineTweet
+version: 1.0
+author: ittekikun
