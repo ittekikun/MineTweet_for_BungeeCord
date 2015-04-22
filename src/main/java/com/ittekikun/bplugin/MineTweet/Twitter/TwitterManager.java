@@ -1,5 +1,6 @@
 package com.ittekikun.bplugin.MineTweet.Twitter;
 
+import com.ittekikun.bplugin.MineTweet.Config.MineTweetConfig;
 import com.ittekikun.bplugin.MineTweet.Data.ConsumerKey;
 import com.ittekikun.bplugin.MineTweet.MineTweet;
 import com.ittekikun.bplugin.MineTweet.Twitter.Gui.Swing.CertifyGui_Swing;
@@ -18,7 +19,7 @@ public class TwitterManager
 {
     public MineTweet plugin;
     public Twitter twitter;
-    //public MineTweetConfig mtConfig;
+    public MineTweetConfig mtConfig;
     public AccessToken accesstoken;
 
     public static Boolean status;
@@ -26,13 +27,12 @@ public class TwitterManager
     public TwitterManager(MineTweet plugin)
     {
         this.plugin = plugin;
-        //this.mtConfig = plugin.mtConfig;
+        this.mtConfig = plugin.mtConfig;
     }
 
     public void startSetup()
     {
-        //if(mtConfig.GUICertify)
-        if(true)
+        if(mtConfig.GUICertify)
         {
             //TwitterStream twStream = new TwitterStreamFactory(configuration).getInstance();
             ConfigurationBuilder conf = new ConfigurationBuilder();
@@ -71,15 +71,15 @@ public class TwitterManager
         //GUI未使用時
         else
         {
-//            status = true;
-//
-//            ConfigurationBuilder conf = new ConfigurationBuilder();
-//            conf.setOAuthConsumerKey(mtConfig.consumerKey);
-//            conf.setOAuthConsumerSecret(mtConfig.consumerSecret);
-//            conf.setOAuthAccessToken(mtConfig.accessToken);
-//            conf.setOAuthAccessTokenSecret(mtConfig.accessTokenSecret);
-//
-//            twitter = new TwitterFactory(conf.build()).getInstance();
+            status = true;
+
+            ConfigurationBuilder conf = new ConfigurationBuilder();
+            conf.setOAuthConsumerKey(mtConfig.consumerKey);
+            conf.setOAuthConsumerSecret(mtConfig.consumerSecret);
+            conf.setOAuthAccessToken(mtConfig.accessToken);
+            conf.setOAuthAccessTokenSecret(mtConfig.accessTokenSecret);
+
+            twitter = new TwitterFactory(conf.build()).getInstance();
         }
     }
 
@@ -101,11 +101,9 @@ public class TwitterManager
     {
         StatusUpdate statusUpdate;
 
-        //if(mtConfig.addDate)
-        if(true)
+        if(mtConfig.addDate)
         {
-            //String time = Utility.timeGetter(mtConfig.dateformat);
-            String time = Utility.simpleTimeGetter();
+            String time = Utility.timeGetter(mtConfig.dateformat);
 
             statusUpdate = new StatusUpdate(tweet + "\n" + time);
         }

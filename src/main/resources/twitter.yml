@@ -1,0 +1,22 @@
+# MineTweet_for_Plugin
+# @author     ittekikun
+# @license    LGPLv3 ※Twitter4JはApache License 2.0で配布されています。
+# @copyright  Copyright ittekikun 2013-2015
+#
+#AddDate: ツイートの最後に挿入されるタイムスタンプを追加するか設定します。無効にした場合状況によって同じ文字列がツイートされてしまいエラーが出る場合があります。その際は設定を有効にして下さい。
+#DateFormat: ツイートの最後に挿入されるタイムスタンプのフォーマットを変更できます。ですが変更をおすすめしませんのでフォーマットの詳細は調べてください。
+#
+#PlayerJoinTweet: プレイヤーがログインした時にツイートするか
+#JoinMessageTemplate: ログインした時にツイートするメッセージをカスタマイズ出来ます。（$user→ID, $time→時間(フォーマットはDateFormatに準拠), $newline→改行）
+#
+#PlayerQuitTweet: プレイヤーがログアウトした時にツイートするか
+#QuitMessageTemplate: ログアウトした時にツイートするメッセージをカスタマイズ出来ます。（$user→ID, $time→時間(フォーマットはDateFormatに準拠), $newline→改行）
+
+AddDate: true
+DateFormat: EEE MMM d HH:mm:ss z
+
+PlayerJoinTweet: true
+JoinMessageTemplate: $userさんがサーバーにログインしました。現在$number人がログインしています。【自動投稿】
+
+PlayerQuitTweet: true
+QuitMessageTemplate: $userさんがサーバーからログアウトしました。現在$number人がログインしています。【自動投稿】

@@ -1,0 +1,20 @@
+# MineTweet_for_Plugin
+# @author     ittekikun
+# @license    LGPLv3 ※Twitter4JはApache License 2.0で配布されています。
+# @copyright  Copyright ittekikun 2013-2015
+#
+#GUICertify: GUIで認証するか(true推奨。CUIOS向け)
+#consumerKey: (GUI認証をOFFにした時に使用)http://p.twpl.jp/show/orig/BqGgz 等を見てキーを取得して設定 以下3つも同等 ※最後に空白を入れないように
+#consumerSecret:
+#accessToken:
+#accessTokenSecret:
+#
+#VersionCheck: ログイン時にバージョンチェックをするか(OPとMineTweet.infoの権限を持ってる人にだけ表示されます)
+
+GUICertify: true
+consumerKey: xxxxxxxxxx
+consumerSecret: xxxxxxxxxx
+accessToken: xxxxxxxxxx
+accessTokenSecret: xxxxxxxxxx
+
+VersionCheck: true

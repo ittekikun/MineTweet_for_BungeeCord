@@ -1,5 +1,6 @@
 package com.ittekikun.bplugin.MineTweet.Listener;
 
+import com.ittekikun.bplugin.MineTweet.Config.MineTweetConfig;
 import com.ittekikun.bplugin.MineTweet.MineTweet;
 import com.ittekikun.bplugin.MineTweet.Twitter.TwitterManager;
 import com.ittekikun.bplugin.MineTweet.Utility;
@@ -19,7 +20,7 @@ public class ConnectionListener implements Listener
 {
 
     MineTweet plugin;
-    //MineTweetConfig mtConfig;
+    MineTweetConfig mtConfig;
     TwitterManager twitterManager;
 
     public ConnectionListener(MineTweet plugin)
@@ -135,6 +136,16 @@ public class ConnectionListener implements Listener
         if (result.contains(MineTweet.KEYWORD_NUMBER))
         {
             result = result.replace(MineTweet.KEYWORD_NUMBER, number);
+        }
+        if (result.contains(MineTweet.KEYWORD_NEWLINE))
+        {
+            result = result.replace(MineTweet.KEYWORD_NEWLINE, MineTweet.SOURCE_NEWLINE);
+        }
+        if (result.contains(MineTweet.KEYWORD_TIME))
+        {
+            String time = Utility.timeGetter(mtConfig.dateformat);
+
+            result = result.replace(MineTweet.KEYWORD_TIME, time);
         }
         return result;
     }
