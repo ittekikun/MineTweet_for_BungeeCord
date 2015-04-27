@@ -24,6 +24,8 @@ public class MineTweetConfig
     public Boolean playerJoinTweet;
     public Boolean playerQuitTweet;
 
+    public Boolean tweetWithPicture;
+
     public String join_message_temp;
     public String quit_message_temp;
 
@@ -54,9 +56,10 @@ public class MineTweetConfig
             this.addDate = twitter.getConfig().getBoolean("AddDate", true);
             this.dateformat = twitter.getConfig().getString("DateFormat", "EEE MMM d HH:mm:ss z");
 
-            this.playerJoinTweet = twitter.getConfig().getBoolean("PlayerJoinTweet");
+            this.tweetWithPicture = twitter.getConfig().getBoolean("TweetWithPicture", false);
+            this.playerJoinTweet = twitter.getConfig().getBoolean("PlayerJoinTweet", true);
             this.join_message_temp = twitter.getConfig().getString("JoinMessageTemplate", "$userさんがサーバーにログインしました。現在$number人がログインしています。【自動投稿】");
-            this.playerQuitTweet = twitter.getConfig().getBoolean("PlayerQuitTweet");
+            this.playerQuitTweet = twitter.getConfig().getBoolean("PlayerQuitTweet", true);
             this.quit_message_temp = twitter.getConfig().getString("QuitMessageTemplate", "$userさんがサーバーからログアウトしました。現在$number人がログインしています。【自動投稿】");
         }
         catch (IOException e)

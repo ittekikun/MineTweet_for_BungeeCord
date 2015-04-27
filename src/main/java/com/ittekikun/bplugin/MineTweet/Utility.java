@@ -89,7 +89,7 @@ public class Utility
         catch (IOException e)
         {
             MineTweet.log.severe("何らかの理由でバージョンアップ確認サーバーにアクセスできませんでした。");
-            //MineTweet.log.severe("お手数ですが一度UpdateCheckをfalseにする事をおすすめします。");
+            MineTweet.log.severe("お手数ですが一度UpdateCheckをfalseにする事をおすすめします。");
             e.printStackTrace();
         }
         return null;

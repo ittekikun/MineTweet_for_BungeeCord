@@ -6,6 +6,8 @@
 #AddDate: ツイートの最後に挿入されるタイムスタンプを追加するか設定します。無効にした場合状況によって同じ文字列がツイートされてしまいエラーが出る場合があります。その際は設定を有効にして下さい。
 #DateFormat: ツイートの最後に挿入されるタイムスタンプのフォーマットを変更できます。ですが変更をおすすめしませんのでフォーマットの詳細は調べてください。
 #
+#TweetWithPicture:
+#
 #PlayerJoinTweet: プレイヤーがログインした時にツイートするか
 #JoinMessageTemplate: ログインした時にツイートするメッセージをカスタマイズ出来ます。（$user→ID, $time→時間(フォーマットはDateFormatに準拠), $newline→改行）
 #
@@ -14,6 +16,8 @@
 
 AddDate: true
 DateFormat: EEE MMM d HH:mm:ss z
+
+TweetWithPicture: false
 
 PlayerJoinTweet: true
 JoinMessageTemplate: $userさんがサーバーにログインしました。現在$number人がログインしています。【自動投稿】
